@@ -35,10 +35,10 @@ const Input = ({
           w-full rounded-md 
           bg-[var(--bg-dark)] 
           border border-[var(--neon-blue)]/30
-          text-white 
+          text-[var(--text-primary)]
           py-2 px-4
           ${icon ? 'pl-10' : ''}
-          placeholder:text-gray-400
+          placeholder:text-[var(--text-muted)]
           focus:outline-none 
           focus:ring-2 
           focus:ring-[var(--neon-blue)]/50

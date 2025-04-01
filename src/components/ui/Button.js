@@ -5,8 +5,8 @@ const variants = {
   primary: 'bg-[var(--neon-blue)] text-black hover:bg-[var(--neon-blue)]/90 neon-border',
   secondary: 'bg-[var(--neon-pink)] text-black hover:bg-[var(--neon-pink)]/90 neon-border-pink',
   success: 'bg-[var(--neon-green)] text-black hover:bg-[var(--neon-green)]/90 neon-border-green',
-  outline: 'bg-transparent border border-[var(--neon-blue)] text-[var(--neon-blue)] hover:bg-[var(--neon-blue)]/10',
-  ghost: 'bg-transparent text-[var(--neon-blue)] hover:bg-[var(--neon-blue)]/10',
+  outline: 'bg-transparent border border-[var(--neon-blue)] text-[var(--neon-blue)] hover:bg-[var(--neon-blue)]/10 dark:hover:bg-[var(--neon-blue)]/20',
+  ghost: 'bg-transparent text-[var(--neon-blue)] hover:bg-[var(--neon-blue)]/10 dark:hover:bg-[var(--neon-blue)]/20',
 };
 
 const sizes = {

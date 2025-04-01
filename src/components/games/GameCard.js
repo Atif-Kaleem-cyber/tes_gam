@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import Badge from '../ui/Badge';
 import Button from '../ui/Button';
+import NeonBorder from '../ui/NeonBorder';
 
 const GameCard = ({ game, index }) => {
   // Determine color based on index for visual variety
@@ -23,17 +24,17 @@ const GameCard = ({ game, index }) => {
   };
 
   return (
-    <motion.div
-      className="group relative rounded-lg overflow-hidden bg-[var(--bg-card)] border border-white/5"
-      whileHover={{ 
-        y: -5,
-        boxShadow: `0 0 20px ${neonColors[color]}35` 
-      }}
-      transition={{ duration: 0.3 }}
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.3, delay: index * 0.05 }}
-    >
+    <NeonBorder color={color} animate={false} className="overflow-hidden">
+      <motion.div
+        className="group relative rounded-lg overflow-hidden bg-[var(--bg-card)]"
+        whileHover={{ 
+          y: -5,
+          boxShadow: `0 0 20px ${neonColors[color]}35` 
+        }}
+        transition={{ duration: 0.3 }}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+      >
       {/* Game Cover Image */}
       <div className="relative aspect-[16/9] w-full overflow-hidden">
         <img
@@ -116,6 +117,7 @@ const GameCard = ({ game, index }) => {
         </div>
       </div>
     </motion.div>
+    </NeonBorder>
   );
 };
 

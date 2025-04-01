@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
+import Layout from '../components/layout/Layout';
 import GameDetail from '../components/games/GameDetail';
 import { games } from '../data/games';
 import { fadeIn } from '../utils/animations';
@@ -34,25 +35,28 @@ const GameDetails = () => {
   // Handle loading state
   if (loading) {
     return (
-      <div className="container mx-auto px-4 py-20 flex flex-col items-center justify-center min-h-[60vh]">
-        <div className="flex flex-col items-center">
-          <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-[var(--neon-blue)] mb-4"></div>
-          <h2 className="text-xl font-orbitron text-[var(--neon-blue)]">Loading game details...</h2>
+      <Layout>
+        <div className="container mx-auto px-4 py-20 flex flex-col items-center justify-center min-h-[60vh]">
+          <div className="flex flex-col items-center">
+            <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-[var(--neon-blue)] mb-4"></div>
+            <h2 className="text-xl font-orbitron text-[var(--neon-blue)]">Loading game details...</h2>
+          </div>
         </div>
-      </div>
+      </Layout>
     );
   }
 
   // Handle error state
   if (error) {
     return (
-      <div className="container mx-auto px-4 py-20 flex flex-col items-center justify-center min-h-[60vh]">
-        <motion.div 
-          className="text-center"
-          initial="hidden"
-          animate="visible"
-          variants={fadeIn}
-        >
+      <Layout>
+        <div className="container mx-auto px-4 py-20 flex flex-col items-center justify-center min-h-[60vh]">
+          <motion.div 
+            className="text-center"
+            initial="hidden"
+            animate="visible"
+            variants={fadeIn}
+          >
           <svg xmlns="http://www.w3.org/2000/svg" className="h-24 w-24 text-[var(--neon-pink)] mx-auto mb-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
           </svg>
@@ -70,11 +74,12 @@ const GameDetails = () => {
           </button>
         </motion.div>
       </div>
+      </Layout>
     );
   }
 
   return (
-    <>
+    <Layout>
       <Helmet>
         <title>{`${game.title} | Neon Gaming`}</title>
         <meta name="description" content={game.description} />
@@ -83,7 +88,7 @@ const GameDetails = () => {
       <GameDetail game={game} />
       
       {/* Similar games section could be added here */}
-    </>
+    </Layout>
   );
 };
 

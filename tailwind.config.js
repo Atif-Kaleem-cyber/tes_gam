@@ -4,82 +4,45 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
     "./public/index.html",
   ],
+  darkMode: ['class', '[data-theme="dark"]'],
   theme: {
     extend: {
-      fontFamily: {
-        poppins: ['Poppins', 'sans-serif'],
-        orbitron: ['Orbitron', 'sans-serif'],
+      height: {
+        'screen/2': '50vh',
+        'screen/3': '33.333333vh',
       },
       colors: {
-        'neon-blue': 'var(--neon-blue)',
-        'neon-pink': 'var(--neon-pink)',
-        'neon-green': 'var(--neon-green)',
-        'neon-yellow': 'var(--neon-yellow)',
-        'neon-purple': 'var(--neon-purple)',
-        'bg-dark': 'var(--bg-dark)',
-        'bg-darker': 'var(--bg-darker)',
-        'bg-card': 'var(--bg-card)',
+        'neon-blue': '#00e1ff',
+        'neon-pink': '#f618f6',
+        'neon-green': '#0cff0c',
+        'neon-yellow': '#ffff33',
+        'dark-bg': '#0c0e1f',
+        'darker-bg': '#050714',
       },
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'cyber-grid': 'linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px)',
+      fontFamily: {
+        'sans': ['Inter', 'ui-sans-serif', 'system-ui'],
+        'display': ['Orbitron', 'sans-serif'],
+        'greatVibes': ['"Great Vibes"', 'cursive'],
+      },
+      boxShadow: {
+        'neon-blue': '0 0 5px #00e1ff, 0 0 15px #00e1ff',
+        'neon-pink': '0 0 5px #f618f6, 0 0 15px #f618f6',
+        'neon-green': '0 0 5px #0cff0c, 0 0 15px #0cff0c',
+        'neon-yellow': '0 0 5px #ffff33, 0 0 15px #ffff33',
       },
       animation: {
         'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-        'flicker': 'flicker 2s linear infinite',
         'glow': 'glow 2s ease-in-out infinite alternate',
       },
       keyframes: {
-        flicker: {
-          '0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100%': {
-            opacity: 0.99,
-            filter: 'brightness(1)'
-          },
-          '20%, 21.999%, 63%, 63.999%, 65%, 69.999%': {
-            opacity: 0.4,
-            filter: 'brightness(0.8)'
-          },
-        },
         glow: {
-          '0%': {
-            filter: 'brightness(1)',
-          },
-          '100%': {
-            filter: 'brightness(1.3)',
-          },
-        }
+          '0%': { textShadow: '0 0 7px rgba(255,255,255,0.5), 0 0 10px rgba(255,255,255,0.5)' },
+          '100%': { textShadow: '0 0 10px #00e1ff, 0 0 20px #00e1ff, 0 0 30px #00e1ff' },
+        },
       },
-      boxShadow: {
-        'neon-blue': '0 0 5px var(--neon-blue), 0 0 10px var(--neon-blue)',
-        'neon-pink': '0 0 5px var(--neon-pink), 0 0 10px var(--neon-pink)',
-        'neon-green': '0 0 5px var(--neon-green), 0 0 10px var(--neon-green)',
-      }
+      /* We're not using these backgrounds in the Tailwind config anymore,
+       * since we're using direct style attributes in the Layout component */
     },
   },
-  plugins: [
-    // Add line-clamp functionality
-    function({ addUtilities }) {
-      const newUtilities = {
-        '.line-clamp-1': {
-          display: '-webkit-box',
-          '-webkit-line-clamp': '1',
-          '-webkit-box-orient': 'vertical',
-          overflow: 'hidden',
-        },
-        '.line-clamp-2': {
-          display: '-webkit-box',
-          '-webkit-line-clamp': '2',
-          '-webkit-box-orient': 'vertical',
-          overflow: 'hidden',
-        },
-        '.line-clamp-3': {
-          display: '-webkit-box',
-          '-webkit-line-clamp': '3',
-          '-webkit-box-orient': 'vertical',
-          overflow: 'hidden',
-        },
-      }
-      addUtilities(newUtilities)
-    }
-  ],
-}
+  plugins: [],
+};

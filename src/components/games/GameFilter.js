@@ -65,12 +65,12 @@ const GameFilter = ({
 
   return (
     <div className="bg-[var(--bg-card)] border border-white/5 rounded-lg p-6 mb-8">
-      <h2 className="text-xl font-orbitron font-bold mb-4 text-white">Filter Games</h2>
+      <h2 className="text-xl font-orbitron font-bold mb-4 text-[var(--text-primary)]">Filter Games</h2>
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
         {/* Search input */}
         <div>
-          <label htmlFor="search" className="block text-sm font-medium text-gray-400 mb-1">
+          <label htmlFor="search" className="block text-sm font-medium text-[var(--text-muted)] mb-1">
             Search
           </label>
           <Input
@@ -81,7 +81,7 @@ const GameFilter = ({
             value={filters.search}
             onChange={handleInputChange}
             icon={
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-[var(--text-muted)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
               </svg>
             }
@@ -90,7 +90,7 @@ const GameFilter = ({
         
         {/* Genre select */}
         <div>
-          <label htmlFor="genre" className="block text-sm font-medium text-gray-400 mb-1">
+          <label htmlFor="genre" className="block text-sm font-medium text-[var(--text-muted)] mb-1">
             Genre
           </label>
           <Select
@@ -104,7 +104,7 @@ const GameFilter = ({
         
         {/* Platform select */}
         <div>
-          <label htmlFor="platform" className="block text-sm font-medium text-gray-400 mb-1">
+          <label htmlFor="platform" className="block text-sm font-medium text-[var(--text-muted)] mb-1">
             Platform
           </label>
           <Select
@@ -118,7 +118,7 @@ const GameFilter = ({
         
         {/* Price range select */}
         <div>
-          <label htmlFor="price" className="block text-sm font-medium text-gray-400 mb-1">
+          <label htmlFor="price" className="block text-sm font-medium text-[var(--text-muted)] mb-1">
             Price Range
           </label>
           <Select
@@ -134,7 +134,7 @@ const GameFilter = ({
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {/* Sort by select */}
         <div>
-          <label htmlFor="sortBy" className="block text-sm font-medium text-gray-400 mb-1">
+          <label htmlFor="sortBy" className="block text-sm font-medium text-[var(--text-muted)] mb-1">
             Sort By
           </label>
           <Select
@@ -159,8 +159,8 @@ const GameFilter = ({
               }))}
               className="sr-only peer"
             />
-            <div className="relative w-11 h-6 bg-gray-700 rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[var(--neon-blue)]"></div>
-            <span className="ms-3 text-sm font-medium text-gray-400">Featured Only</span>
+            <div className="relative w-11 h-6 bg-[var(--bg-darker)] rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[var(--neon-blue)]"></div>
+            <span className="ms-3 text-sm font-medium text-[var(--text-muted)]">Featured Only</span>
           </label>
         </div>
         

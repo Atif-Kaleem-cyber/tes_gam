@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="controllerGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <linearGradient id="bodyGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0c0e1f" />
+      <stop offset="100%" stop-color="#050714" />
+    </linearGradient>
+    <linearGradient id="pinkGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f618f6" />
+      <stop offset="100%" stop-color="#f618f6" />
+    </linearGradient>
+    <linearGradient id="blueGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00e1ff" />
+      <stop offset="100%" stop-color="#00e1ff" />
+    </linearGradient>
+    <linearGradient id="greenGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0cff0c" />
+      <stop offset="100%" stop-color="#0cff0c" />
+    </linearGradient>
+    <linearGradient id="yellowGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffff33" />
+      <stop offset="100%" stop-color="#ffff33" />
+    </linearGradient>
+  </defs>
+
+  <!-- Controller Body -->
+  <path d="M200 50 C 160 50, 130 70, 100 100 L 50 100 C 35 100, 25 110, 25 125 L 25 175 C 25 190, 35 200, 50 200 L 100 200 C 130 230, 160 250, 200 250 C 240 250, 270 230, 300 200 L 350 200 C 365 200, 375 190, 375 175 L 375 125 C 375 110, 365 100, 350 100 L 300 100 C 270 70, 240 50, 200 50 Z" 
+        fill="url(#bodyGradient)" stroke="#333" stroke-width="3" />
+  
+  <!-- Left thumbstick -->
+  <circle cx="125" cy="150" r="20" fill="#222" stroke="#444" stroke-width="2" />
+  <circle cx="125" cy="150" r="15" fill="#333" stroke="#555" stroke-width="1" />
+  
+  <!-- Right thumbstick -->
+  <circle cx="275" cy="150" r="20" fill="#222" stroke="#444" stroke-width="2" />
+  <circle cx="275" cy="150" r="15" fill="#333" stroke="#555" stroke-width="1" />
+  
+  <!-- D-Pad -->
+  <rect x="75" y="140" width="30" height="10" rx="2" ry="2" fill="#333" />
+  <rect x="85" y="130" width="10" height="30" rx="2" ry="2" fill="#333" />
+  
+  <!-- Buttons with glow effects -->
+  <circle cx="325" cy="120" r="10" fill="#222" stroke="url(#pinkGlow)" stroke-width="2" filter="url(#controllerGlow)" />
+  <circle cx="345" cy="140" r="10" fill="#222" stroke="url(#blueGlow)" stroke-width="2" filter="url(#controllerGlow)" />
+  <circle cx="325" cy="160" r="10" fill="#222" stroke="url(#greenGlow)" stroke-width="2" filter="url(#controllerGlow)" />
+  <circle cx="305" cy="140" r="10" fill="#222" stroke="url(#yellowGlow)" stroke-width="2" filter="url(#controllerGlow)" />
+  
+  <!-- Center button -->
+  <circle cx="200" cy="125" r="12" fill="#333" stroke="#555" stroke-width="1" />
+  
+  <!-- Shoulder buttons -->
+  <rect x="70" y="75" width="60" height="15" rx="5" ry="5" fill="#222" stroke="#444" stroke-width="1" />
+  <rect x="270" y="75" width="60" height="15" rx="5" ry="5" fill="#222" stroke="#444" stroke-width="1" />
+  
+  <!-- Neon glow outline -->
+  <path d="M200 50 C 160 50, 130 70, 100 100 L 50 100 C 35 100, 25 110, 25 125 L 25 175 C 25 190, 35 200, 50 200 L 100 200 C 130 230, 160 250, 200 250 C 240 250, 270 230, 300 200 L 350 200 C 365 200, 375 190, 375 175 L 375 125 C 375 110, 365 100, 350 100 L 300 100 C 270 70, 240 50, 200 50 Z" 
+        fill="none" stroke="url(#blueGlow)" stroke-width="2" opacity="0.8" filter="url(#controllerGlow)" />
+</svg>

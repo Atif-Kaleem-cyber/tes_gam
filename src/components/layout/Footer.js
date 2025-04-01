@@ -14,7 +14,7 @@ const Footer = () => {
                 NEON<span className="neon-text-pink">GAMING</span>
               </h2>
             </Link>
-            <p className="text-gray-400 mb-6">
+            <p className="text-[var(--text-muted)] mb-6">
               Your ultimate destination for everything gaming. Stay updated with the latest releases, news, and gaming community events.
             </p>
             <div className="flex space-x-4">
@@ -23,7 +23,7 @@ const Footer = () => {
                 <motion.a 
                   key={social}
                   href={`#${social}`} 
-                  className="text-gray-400 hover:text-[var(--neon-blue)] transition-colors duration-300"
+                  className="text-[var(--text-muted)] hover:text-[var(--neon-blue)] transition-colors duration-300"
                   whileHover={{ y: -3 }}
                   aria-label={social}
                 >
@@ -51,11 +51,11 @@ const Footer = () => {
           
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-orbitron font-semibold mb-4 text-white">Quick Links</h3>
+            <h3 className="text-lg font-orbitron font-semibold mb-4 text-[var(--text-primary)]">Quick Links</h3>
             <ul className="space-y-3">
               {['Home', 'Games', 'News', 'About', 'Contact'].map((item) => (
                 <li key={item}>
-                  <Link to={`/${item.toLowerCase() === 'home' ? '' : item.toLowerCase()}`} className="text-gray-400 hover:text-[var(--neon-blue)] transition-colors duration-300">
+                  <Link to={`/${item.toLowerCase() === 'home' ? '' : item.toLowerCase()}`} className="text-[var(--text-muted)] hover:text-[var(--neon-blue)] transition-colors duration-300">
                     {item}
                   </Link>
                 </li>
@@ -65,11 +65,11 @@ const Footer = () => {
           
           {/* Games Categories */}
           <div>
-            <h3 className="text-lg font-orbitron font-semibold mb-4 text-white">Categories</h3>
+            <h3 className="text-lg font-orbitron font-semibold mb-4 text-[var(--text-primary)]">Categories</h3>
             <ul className="space-y-3">
               {['Action', 'Adventure', 'RPG', 'Strategy', 'Sports', 'Simulation'].map((item) => (
                 <li key={item}>
-                  <Link to={`/games?category=${item.toLowerCase()}`} className="text-gray-400 hover:text-[var(--neon-blue)] transition-colors duration-300">
+                  <Link to={`/games?category=${item.toLowerCase()}`} className="text-[var(--text-muted)] hover:text-[var(--neon-blue)] transition-colors duration-300">
                     {item}
                   </Link>
                 </li>
@@ -79,8 +79,8 @@ const Footer = () => {
           
           {/* Newsletter */}
           <div>
-            <h3 className="text-lg font-orbitron font-semibold mb-4 text-white">Newsletter</h3>
-            <p className="text-gray-400 mb-4">Subscribe to our newsletter to get the latest updates on games and exclusive offers.</p>
+            <h3 className="text-lg font-orbitron font-semibold mb-4 text-[var(--text-primary)]">Newsletter</h3>
+            <p className="text-[var(--text-muted)] mb-4">Subscribe to our newsletter to get the latest updates on games and exclusive offers.</p>
             <form className="space-y-2">
               <input
                 type="email"
@@ -99,17 +99,17 @@ const Footer = () => {
         </div>
         
         <div className="mt-12 pt-8 border-t border-white/5 text-center">
-          <p className="text-gray-400">
+          <p className="text-[var(--text-muted)]">
             &copy; {new Date().getFullYear()} NeonGaming. All rights reserved.
           </p>
           <div className="mt-4 flex justify-center space-x-6">
-            <Link to="/privacy" className="text-gray-400 hover:text-[var(--neon-blue)] text-sm transition-colors duration-300">
+            <Link to="/privacy" className="text-[var(--text-muted)] hover:text-[var(--neon-blue)] text-sm transition-colors duration-300">
               Privacy Policy
             </Link>
-            <Link to="/terms" className="text-gray-400 hover:text-[var(--neon-blue)] text-sm transition-colors duration-300">
+            <Link to="/terms" className="text-[var(--text-muted)] hover:text-[var(--neon-blue)] text-sm transition-colors duration-300">
               Terms of Service
             </Link>
-            <Link to="/contact" className="text-gray-400 hover:text-[var(--neon-blue)] text-sm transition-colors duration-300">
+            <Link to="/contact" className="text-[var(--text-muted)] hover:text-[var(--neon-blue)] text-sm transition-colors duration-300">
               Contact Us
             </Link>
           </div>

@@ -1,12 +1,13 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import Layout from '../components/layout/Layout';
 import Hero from '../components/home/Hero';
 import FeaturedGames from '../components/home/FeaturedGames';
 import NewsSection from '../components/home/NewsSection';
 
 const Home = () => {
   return (
-    <>
+    <Layout>
       <Helmet>
         <title>Neon Gaming | Your Ultimate Gaming Destination</title>
         <meta name="description" content="Discover the latest and greatest games in our neon-lit digital arcade. Your gaming journey begins here." />
@@ -31,7 +32,7 @@ const Home = () => {
                 <span className="neon-text-blue">JOIN OUR</span> <span className="neon-text-pink">GAMING COMMUNITY</span>
               </h2>
               
-              <p className="text-xl text-gray-300 mb-8">
+              <p className="text-xl text-[var(--text-secondary)] mb-8">
                 Connect with fellow gamers, participate in tournaments, and stay updated on the latest gaming news and events.
               </p>
               
@@ -42,8 +43,8 @@ const Home = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                     </svg>
                   </div>
-                  <h3 className="text-xl font-orbitron font-bold mb-2 text-white">Join Discussions</h3>
-                  <p className="text-gray-400">
+                  <h3 className="text-xl font-orbitron font-bold mb-2 text-[var(--text-primary)]">Join Discussions</h3>
+                  <p className="text-[var(--text-muted)]">
                     Connect with other gamers in our forums and discuss your favorite games.
                   </p>
                 </div>
@@ -54,8 +55,8 @@ const Home = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
                     </svg>
                   </div>
-                  <h3 className="text-xl font-orbitron font-bold mb-2 text-white">Live Streams</h3>
-                  <p className="text-gray-400">
+                  <h3 className="text-xl font-orbitron font-bold mb-2 text-[var(--text-primary)]">Live Streams</h3>
+                  <p className="text-[var(--text-muted)]">
                     Watch live gameplay sessions from top gamers and learn new strategies.
                   </p>
                 </div>
@@ -66,8 +67,8 @@ const Home = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
                     </svg>
                   </div>
-                  <h3 className="text-xl font-orbitron font-bold mb-2 text-white">Win Rewards</h3>
-                  <p className="text-gray-400">
+                  <h3 className="text-xl font-orbitron font-bold mb-2 text-[var(--text-primary)]">Win Rewards</h3>
+                  <p className="text-[var(--text-muted)]">
                     Participate in tournaments and win exclusive in-game items and prizes.
                   </p>
                 </div>
@@ -80,7 +81,7 @@ const Home = () => {
           </div>
         </section>
       </div>
-    </>
+    </Layout>
   );
 };
 

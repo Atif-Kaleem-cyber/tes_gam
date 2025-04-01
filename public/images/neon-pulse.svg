@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="1000" height="600" viewBox="0 0 1000 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="neonGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="10" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    
+    <!-- Animated pulses -->
+    <radialGradient id="pulseGradient1" cx="0.5" cy="0.5" r="0.5">
+      <animate attributeName="r" values="0.3;0.7;0.3" dur="8s" repeatCount="indefinite" />
+      <stop offset="0%" stop-color="#00e1ff" stop-opacity="0.8" />
+      <stop offset="70%" stop-color="#00e1ff" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#00e1ff" stop-opacity="0" />
+    </radialGradient>
+    
+    <radialGradient id="pulseGradient2" cx="0.5" cy="0.5" r="0.5">
+      <animate attributeName="r" values="0.4;0.8;0.4" dur="10s" repeatCount="indefinite" />
+      <stop offset="0%" stop-color="#f618f6" stop-opacity="0.8" />
+      <stop offset="70%" stop-color="#f618f6" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#f618f6" stop-opacity="0" />
+    </radialGradient>
+    
+    <radialGradient id="pulseGradient3" cx="0.5" cy="0.5" r="0.5">
+      <animate attributeName="r" values="0.5;0.9;0.5" dur="12s" repeatCount="indefinite" />
+      <stop offset="0%" stop-color="#0cff0c" stop-opacity="0.8" />
+      <stop offset="70%" stop-color="#0cff0c" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#0cff0c" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Pulsing background elements -->
+  <circle cx="200" cy="300" r="250" fill="url(#pulseGradient1)" opacity="0.2" />
+  <circle cx="650" cy="150" r="200" fill="url(#pulseGradient2)" opacity="0.2" />
+  <circle cx="800" cy="450" r="180" fill="url(#pulseGradient3)" opacity="0.2" />
+  
+  <!-- Animated neon outlines -->
+  <path d="M100,100 L900,100 L900,500 L100,500 Z" fill="none" stroke="#00e1ff" stroke-width="1" opacity="0.4" filter="url(#neonGlow)">
+    <animate attributeName="opacity" values="0.4;0.8;0.4" dur="4s" repeatCount="indefinite" />
+  </path>
+  
+  <path d="M150,150 L850,150 L850,450 L150,450 Z" fill="none" stroke="#f618f6" stroke-width="1" opacity="0.4" filter="url(#neonGlow)">
+    <animate attributeName="opacity" values="0.4;0.7;0.4" dur="6s" repeatCount="indefinite" />
+  </path>
+  
+  <!-- Flickering dots -->
+  <g filter="url(#neonGlow)">
+    <circle cx="100" cy="100" r="3" fill="#00e1ff">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="900" cy="100" r="3" fill="#00e1ff">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="900" cy="500" r="3" fill="#00e1ff">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="2.5s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="100" cy="500" r="3" fill="#00e1ff">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="3.5s" repeatCount="indefinite" />
+    </circle>
+    
+    <circle cx="150" cy="150" r="3" fill="#f618f6">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="2.2s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="850" cy="150" r="3" fill="#f618f6">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="3.2s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="850" cy="450" r="3" fill="#f618f6">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="2.7s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="150" cy="450" r="3" fill="#f618f6">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="3.7s" repeatCount="indefinite" />
+    </circle>
+  </g>
+  
+  <!-- Diagonal lines -->
+  <line x1="100" y1="100" x2="900" y2="500" stroke="#0cff0c" stroke-width="1" opacity="0.5" filter="url(#neonGlow)">
+    <animate attributeName="opacity" values="0.5;0.8;0.5" dur="7s" repeatCount="indefinite" />
+  </line>
+  <line x1="900" y1="100" x2="100" y2="500" stroke="#0cff0c" stroke-width="1" opacity="0.5" filter="url(#neonGlow)">
+    <animate attributeName="opacity" values="0.5;0.8;0.5" dur="9s" repeatCount="indefinite" />
+  </line>
+</svg>

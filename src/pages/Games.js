@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
+import Layout from '../components/layout/Layout';
 import GameFilter from '../components/games/GameFilter';
 import GameGrid from '../components/games/GameGrid';
 import { games } from '../data/games';
@@ -120,7 +121,7 @@ const Games = () => {
   }, []);
 
   return (
-    <>
+    <Layout>
       <Helmet>
         <title>Games Catalog | Neon Gaming</title>
         <meta name="description" content="Browse our extensive collection of games with advanced filtering options." />
@@ -159,7 +160,7 @@ const Games = () => {
         {/* Game Grid */}
         <GameGrid filteredGames={filteredGames} />
       </div>
-    </>
+    </Layout>
   );
 };
 

@@ -3,12 +3,15 @@ import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import Button from '../ui/Button';
 import Input from '../ui/Input';
+import ThemeToggle from '../ui/ThemeToggle';
+import { useTheme } from '../../context/ThemeContext';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const location = useLocation();
+  const { theme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,15 +41,17 @@ const Navbar = () => {
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'Games', path: '/games' },
-    { name: 'News', path: '#news' },
-    { name: 'About', path: '#about' },
+    { name: 'News', path: '/news' },
+    { name: 'About', path: '/about' },
   ];
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-[var(--bg-darker)]/90 backdrop-blur-lg shadow-lg shadow-[var(--neon-blue)]/5' 
+          ? theme === 'dark' 
+            ? 'bg-[var(--bg-darker)]/90 backdrop-blur-lg shadow-lg shadow-[var(--neon-blue)]/5' 
+            : 'bg-white/90 backdrop-blur-lg shadow-lg shadow-[var(--neon-purple)]/5'
           : 'bg-transparent'
       }`}
     >
@@ -59,8 +64,8 @@ const Navbar = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <h1 className="text-2xl font-bold font-orbitron neon-text-blue">
-                NEON<span className="neon-text-pink">GAMING</span>
+              <h1 className="text-3xl font-greatVibes neon-text-blue">
+                Neon<span className="neon-text-pink">Gaming</span>
               </h1>
             </motion.div>
           </Link>
@@ -75,7 +80,10 @@ const Navbar = () => {
                   relative font-orbitron font-medium text-lg
                   transition-colors duration-300
                   hover:text-[var(--neon-blue)]
-                  ${location.pathname === link.path ? 'text-[var(--neon-blue)]' : 'text-white'}
+                  ${location.pathname === link.path 
+                    ? 'text-[var(--neon-blue)]' 
+                    : 'text-[var(--text-primary)]'
+                  }
                 `}
               >
                 {location.pathname === link.path && (
@@ -102,14 +110,19 @@ const Navbar = () => {
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-48 py-1.5"
                 icon={
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-[var(--text-muted)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                   </svg>
                 }
               />
             </form>
-            <Button variant="outline" size="sm">Sign In</Button>
-            <Button size="sm">Join Now</Button>
+            <ThemeToggle />
+            <Link to="/signin">
+              <Button variant="outline" size="sm">Sign In</Button>
+            </Link>
+            <Link to="/join">
+              <Button size="sm">Join Now</Button>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -119,7 +132,7 @@ const Navbar = () => {
               className="p-2 focus:outline-none"
               aria-label="Toggle mobile menu"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-[var(--text-primary)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 {isMobileMenuOpen ? (
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 ) : (
@@ -139,7 +152,11 @@ const Navbar = () => {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-[var(--bg-darker)]/95 backdrop-blur-lg border-t border-white/10 shadow-lg shadow-[var(--neon-blue)]/5"
+            className={`md:hidden backdrop-blur-lg ${
+              theme === 'dark'
+                ? 'bg-[var(--bg-darker)]/95 border-t border-white/10 shadow-lg shadow-[var(--neon-blue)]/5'
+                : 'bg-white/95 border-t border-gray-200 shadow-lg shadow-[var(--neon-purple)]/5'
+            }`}
           >
             <div className="container mx-auto px-4 py-4 flex flex-col space-y-6">
               <form onSubmit={handleSearch} className="relative">
@@ -150,7 +167,7 @@ const Navbar = () => {
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="w-full py-1.5"
                   icon={
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-[var(--text-muted)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                     </svg>
                   }
@@ -167,7 +184,7 @@ const Navbar = () => {
                       transition-colors duration-300
                       ${location.pathname === link.path 
                         ? 'bg-[var(--neon-blue)]/10 text-[var(--neon-blue)]' 
-                        : 'text-white hover:bg-white/5'
+                        : 'text-[var(--text-primary)] hover:bg-[var(--text-primary)]/5'
                       }
                     `}
                   >
@@ -176,9 +193,18 @@ const Navbar = () => {
                 ))}
               </nav>
               
+              <div className="flex items-center justify-between mb-2">
+                <div className="text-sm text-[var(--text-secondary)]">Toggle Theme</div>
+                <ThemeToggle />
+              </div>
+              
               <div className="flex space-x-4">
-                <Button variant="outline" className="flex-1">Sign In</Button>
-                <Button className="flex-1">Join Now</Button>
+                <Link to="/signin" className="flex-1">
+                  <Button variant="outline" className="w-full">Sign In</Button>
+                </Link>
+                <Link to="/join" className="flex-1">
+                  <Button className="w-full">Join Now</Button>
+                </Link>
               </div>
             </div>
           </motion.div>

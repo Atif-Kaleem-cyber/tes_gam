@@ -2,10 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
+import Layout from '../components/layout/Layout';
 
 const NotFound = () => {
   return (
-    <>
+    <Layout>
       <Helmet>
         <title>404 - Page Not Found | Neon Gaming</title>
         <meta name="description" content="The page you are looking for does not exist." />
@@ -102,7 +103,7 @@ const NotFound = () => {
           />
         </div>
       </div>
-    </>
+    </Layout>
   );
 };
 

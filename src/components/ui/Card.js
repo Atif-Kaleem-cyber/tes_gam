@@ -8,9 +8,9 @@ const Card = ({
   glowColor = 'blue',
   ...props 
 }) => {
-  // Map the glow color to CSS variables
+  // Map the glow color to CSS variables with theme-aware values
   const glowStyles = {
-    blue: 'hover:shadow-[0_0_15px_rgba(0,225,255,0.5)]',
+    blue: 'hover:shadow-[0_0_15px_var(--shadow-color,rgba(0,225,255,0.5))]',
     pink: 'hover:shadow-[0_0_15px_rgba(246,24,246,0.5)]',
     green: 'hover:shadow-[0_0_15px_rgba(12,255,12,0.5)]',
     purple: 'hover:shadow-[0_0_15px_rgba(188,19,254,0.5)]',
